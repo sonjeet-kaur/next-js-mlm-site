@@ -27,8 +27,8 @@ export const _fetch = async (url, method, data, header) => {
                         {
                                 method: "PATCH",
                                 headers: {
-                                        'Accept': 'application/json',
-                                        'Content-Type': 'application/json',
+                                        // 'Accept': 'application/json',
+                                        // 'Content-Type': 'application/json',
                                         "Authorization": "Bearer " + LoginToken,
                                 },
                                 body: JSON.stringify(data),

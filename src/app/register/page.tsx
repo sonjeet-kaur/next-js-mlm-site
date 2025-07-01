@@ -7,39 +7,28 @@ import _fetch from '@/config/api';
 import { useState } from 'react';
 
 export default function Register() {
+
+    const [sponsorID, setSponsorID] = useState('');
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
 
-    const RegisterSubmit = async () => {
-        // const data = {
-        //     'name': username,
-        //     'email': email,
-        //     'phone': phone
-        // }
-        // console.log('datadata', data);
+    const RegisterSubmit = async (e:any) => {
+        e.preventDefault();
 
-
-        let res = fetch("http://192.168.18.245/mlm_software_hmvc/user/register", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: username,
-                email: email,
-                phone: phone
-            }),
-        });
-        console.log('resresres',res);
+        let formData = new FormData();
+        formData.append('sponser_id', sponsorID);
+        formData.append('name', username);
+        formData.append('email', email);
+        formData.append('phone', phone);
         
-        // let res: any = await _fetch(`${api_url}mlm_software_hmvc/user/register`, "POST", data);
-        // console.log('resres', res);
+        let res: any = await _fetch(`${api_url}mlm_software_hmvc/user/register`, "ImagePost", formData, {});
 
-        // if (res?.status === 'success') {
-        // }
-        // else {
-        // }
+        if (res?.status === 'success') {
+            // toasted.sucess
+        }
+        else {
+        }
     }
 
     return (
@@ -50,6 +39,10 @@ export default function Register() {
                         <div className="login-heading">
                             <h2>Register</h2>
                             <div className='login-from'>
+                            <div className="form-input">
+                                    <label htmlFor="exampleFormControlInput1" className="form-label">Sponsor ID</label>
+                                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Sponsor" onChange={(e: any) => setSponsorID(e.target.value)} value={sponsorID} />
+                                </div>
                                 <div className="form-input">
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
                                     <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Your Name" onChange={(e: any) => setUsername(e.target.value)} value={username} />
