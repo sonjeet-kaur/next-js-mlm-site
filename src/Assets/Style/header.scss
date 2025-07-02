@@ -1,0 +1,16 @@
+.main-header {
+    padding: 0 20px 0 270px;
+    background-color: var(--header-bg);
+    .header-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+        .icon-div {
+            font-size: 30px;
+        }
+        .userpic-div {
+            width: 50px;
+        }
+    }
+}
