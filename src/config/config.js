@@ -1,2 +1,1 @@
-export const api_url = 'http://192.168.18.245/';
-// http:///192.168.18.245:8001
+export const api_url = 'http://192.168.18.245/mlm_software_hmvc/user/';
