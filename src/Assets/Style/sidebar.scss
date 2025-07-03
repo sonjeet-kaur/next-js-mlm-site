@@ -1,0 +1,47 @@
+.main-sidebar {
+    position: fixed;
+    top: 0;
+    background: var(--sidebar-bg);
+    left: 0;
+    height: 100vh;
+    width: 270px;
+    z-index: 9;
+
+    .sidebar-div {
+        .main-logo {
+            text-align: center;
+            font-size: 30px;
+            color: var(--txt-white);
+            padding: 20px 0;
+        }
+
+        .sidebar-drops {
+            margin-top: 40px;
+
+            .drops-details {
+                background-color: #6d757d;
+                padding: 20px 10px;
+                margin-bottom: 20px;
+                text-align: center;
+
+                .accordian {
+                    .accordian-item {
+                        .accordian-header {
+                            .accordian-button {
+                            background-color: var(--sidebar-bg) !important;
+
+                            }
+                            .dash-details {
+                                color: var(--txt-Black);
+                                text-decoration: none;
+                            }
+                        }
+                        .accordian-body {
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
