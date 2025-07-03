@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
 import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
+// import Sidebar from "@/components/Sidebar";
 import '@/Assets/Style/style.scss';
 import "./globals.css";
 
@@ -19,25 +19,17 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <html lang="en" >
+      <html lang="en" data-theme="light" >
 
         <head>
-
-         
-
-          <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-          ></script>
-
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         </head>
         <body>
           <Header />
-          
-            <Sidebar />
-            <main >
-              {children}
-            </main>
-          {children}
+          {/* <Sidebar /> */}
+          <main >
+            {children}
+          </main>
         </body>
       </html>
     </>

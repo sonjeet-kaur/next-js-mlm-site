@@ -24,9 +24,22 @@
                 margin-bottom: 20px;
                 text-align: center;
 
-                .dash-details {
-                    color: var(--txt-white);
-                    text-decoration: none;
+                .accordian {
+                    .accordian-item {
+                        .accordian-header {
+                            .accordian-button {
+                            background-color: var(--sidebar-bg) !important;
+
+                            }
+                            .dash-details {
+                                color: var(--txt-Black);
+                                text-decoration: none;
+                            }
+                        }
+                        .accordian-body {
+
+                        }
+                    }
                 }
             }
         }

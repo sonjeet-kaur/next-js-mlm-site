@@ -9,3 +9,8 @@ $breakpoint_450: 'max-width: 450px';
 $breakpoint_ESM: 'max-width: 385px';
 $breakpoint_50: 'max-width: 350px';
 
+
+
+.accordion-button::after {
+    background-image: none !important;
+}

@@ -44,6 +44,10 @@
   --secondary-btn: #ff4081;
 }
 
+.accordion-button::after {
+  background-image: none !important;
+}
+
 .main-header {
   padding: 0 20px 0 270px;
   background-color: var(--header-bg);
@@ -85,11 +89,13 @@
   margin-bottom: 20px;
   text-align: center;
 }
-.main-sidebar .sidebar-div .sidebar-drops .drops-details .dash-details {
-  color: var(--txt-white);
+.main-sidebar .sidebar-div .sidebar-drops .drops-details .accordian .accordian-item .accordian-header .accordian-button {
+  background-color: var(--sidebar-bg) !important;
+}
+.main-sidebar .sidebar-div .sidebar-drops .drops-details .accordian .accordian-item .accordian-header .dash-details {
+  color: var(--txt-Black);
   text-decoration: none;
 }
-
 .login-sec {
   background: linear-gradient(178deg, #E3E5E6, #F3E9C5);
   padding: 90px 0;
