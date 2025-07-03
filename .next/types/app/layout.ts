@@ -1,4 +1,4 @@
-// File: /Users/harpreetbhullar/Desktop/Office data/Office-Site/next-js-mlm-site/src/app/layout.tsx
+// File: /Users/rohit/Desktop/next-js-mlm-site/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

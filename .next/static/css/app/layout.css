@@ -407,9 +407,6 @@
   .my-2 {
     margin-block: calc(var(--spacing) * 2);
   }
-  .me-2 {
-    margin-inline-end: calc(var(--spacing) * 2);
-  }
   .me-auto {
     margin-inline-end: auto;
   }
