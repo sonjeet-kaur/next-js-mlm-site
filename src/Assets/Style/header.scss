@@ -1,16 +1,39 @@
 .main-header {
-    padding: 0 20px 0 270px;
+    // padding: 0 20px 0 270px;
     background-color: var(--header-bg);
+
     .header-div {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 0;
-        .icon-div {
+        padding: 10px 0;
+
+        .logo-div {
             font-size: 30px;
+            color: black;
         }
-        .userpic-div {
-            width: 50px;
+
+        .header-right-data {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            .userpic-div {
+                img {
+                    width: 50px;
+                }
+            }
+            .logout-div {
+            a {
+                i {
+                        color: var(--txt-black);
+                        font-size: 50px;
+                }
+            }
+            }
         }
     }
+}
+.main-navbar {
+    background-color: var(--header-bg);
 }
