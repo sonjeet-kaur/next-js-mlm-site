@@ -2,6 +2,7 @@
 export const _fetch = async (url, method, data, header) => {
 
         const LoginToken = localStorage.getItem("accessToken");
+        console.log('LoginTokenLoginToken', LoginToken);
 
         if (method === 'get' || method === 'GET') {
 
@@ -13,6 +14,7 @@ export const _fetch = async (url, method, data, header) => {
                                         'Content-Type': 'application/json',
                                         "Authorization": "Bearer " + LoginToken,
                                 },
+                                credentials: "include"
                         })
                         .then((response) => response.json())
                         .then((result) => {
@@ -106,6 +108,7 @@ export const _fetch = async (url, method, data, header) => {
                                 "Authorization": "Bearer " + LoginToken,
                         },
                         body: JSON.stringify(data),
+                        credentials: "include"
                 }).then((response) => response.json())
                         .then((result) => {
                                 return result;

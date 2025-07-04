@@ -1,7 +1,7 @@
 import { toast } from 'react-toastify';
 
 const toasted = {
-    success: async function (message) {
+    success: function (message) {
         toast.success(message, {
             hideProgressBar: false,
             closeOnClick: true,
@@ -10,7 +10,7 @@ const toasted = {
             progress: undefined,
         })
     },
-    error: async function (message) {
+    error: function (message) {
         toast.error(message, {
             hideProgressBar: false,
             closeOnClick: true,

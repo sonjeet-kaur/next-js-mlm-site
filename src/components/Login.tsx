@@ -20,10 +20,12 @@ export default function Login() {
         formData.append('password', password);
 
         let res: any = await _fetch(`${api_url}login`, "ImagePost", formData, {});
-        console.log('resresres', res);
 
         if (res?.status == 'success') {
             toasted.success(res?.message);
+            localStorage.setItem("auth", 'true');
+            localStorage.setItem("userInfo", JSON.stringify(res?.userdata));
+            localStorage.setItem("accessToken", res?.token);
         }
         else {
             toasted.error(res?.message);

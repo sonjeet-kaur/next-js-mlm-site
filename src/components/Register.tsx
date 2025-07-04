@@ -6,6 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { api_url } from '@/config/config';
 import _fetch from '@/config/api';
 import toasted from '@/config/toast';
+import { ethers } from 'ethers';
+import { Web3 } from 'web3';
+import Web3modal from 'web3modal';
+import WalletConnectProvider from "@walletconnect/web3-provider";
 
 export default function Register() {
 
@@ -13,8 +17,32 @@ export default function Register() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+    const [walletAddress, setWalletAddress] = useState("");
 
-    const RegisterSubmit = async (e:any) => {
+    const connectWallet = async () => {
+        try {
+            const providerOptions = {
+                walletconnect: {
+                    package: WalletConnectProvider,
+                    options: {
+                        56: "https://bsc-dataseed.binance.org/",
+                    }
+                }
+            }
+            const web3modal = new Web3modal({
+                cacheProvider: false,
+                providerOptions
+            });
+            const instance = await web3modal.connect();
+            const web3 = new Web3(instance);
+            const accounts = await web3.eth.getAccounts();
+            setWalletAddress(accounts[0]);
+        } catch (error) {
+            console.error("Wallet connection failed", error);
+        }
+    };
+
+    const RegisterSubmit = async (e: any) => {
         e.preventDefault();
 
         let formData = new FormData();
@@ -22,14 +50,19 @@ export default function Register() {
         formData.append('name', username);
         formData.append('email', email);
         formData.append('phone', phone);
-        
+
         let res: any = await _fetch(`${api_url}register`, "ImagePost", formData, {});
 
         if (res?.status === 'success') {
             toasted.success(res?.message);
         }
         else {
-             toasted.error(res?.message);
+            if (typeof res?.message === 'object') {
+                const firstError = Object.values(res.message)[0];
+                toasted.error(firstError);
+            } else {
+                toasted.error(res?.message);
+            }
         }
     }
 
@@ -41,7 +74,7 @@ export default function Register() {
                         <div className="login-heading">
                             <h2>Register</h2>
                             <div className='login-from'>
-                            <div className="form-input">
+                                <div className="form-input">
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Sponsor ID</label>
                                     <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Sponsor" onChange={(e: any) => setSponsorID(e.target.value)} value={sponsorID} />
                                 </div>
@@ -60,6 +93,10 @@ export default function Register() {
                                 <div className="form-btn">
                                     <button className='login-btn' onClick={RegisterSubmit}>Register Now</button>
                                 </div>
+
+                                <button onClick={connectWallet}>
+                                    {walletAddress ? `Connected: ${walletAddress.slice(0, 6)}...${walletAddress.slice(-4)}` : "Connect Wallet"}
+                                </button>
                             </div>
                         </div>
                     </div>
