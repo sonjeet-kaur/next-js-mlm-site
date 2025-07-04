@@ -40,15 +40,15 @@
     }
 }
 .main-navbar {
-    background-color: var(--header-bg);
+    background-color: var(--sidebar-btn-bg);
     padding: 5px 0;
     .nav-link {
         margin-right: 10px;
         text-align: center;
         color:var(--txt-white);
-        background: var(--sidebar-btn-bg);
-        padding: 9px 30px !important;
-        border-radius: 8px;
+        // background: var(--sidebar-btn-bg);
+        // padding: 9px 30px !important;
+        // border-radius: 8px;
         transition: all 0.4s;
         transform:scale(0.9);
         display: flex;
