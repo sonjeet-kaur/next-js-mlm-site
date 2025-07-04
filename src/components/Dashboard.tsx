@@ -6,8 +6,6 @@ import _fetch from '@/config/api';
 
 export default function Dashboard(pageTitle: any) {
 
-    console.log('pageTitlepageTitle', pageTitle);
-
     return (
     <section className='main'>
         <h6>main</h6>
