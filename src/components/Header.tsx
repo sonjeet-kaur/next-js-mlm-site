@@ -6,9 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Image from "next/image";
 import userpic from "@/Assets/Images/userr1.png";
 import Link from "next/link";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -87,7 +85,7 @@ export default function Header(pageTitle: any) {
                   title="Activate Account"
                   id="navbarScrollingDropdown"
                 >
-                  <NavDropdown.Item href="#">Activate Account</NavDropdown.Item>
+                  <NavDropdown.Item href="/investment">Activate Account</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Edit Profile Image
                   </NavDropdown.Item>
