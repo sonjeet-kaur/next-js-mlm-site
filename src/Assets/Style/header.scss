@@ -56,6 +56,7 @@
         position: relative;
         &:hover{
             transform:scale(1.1);
+            color: var(--txt-white);
         }
     }
     .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {

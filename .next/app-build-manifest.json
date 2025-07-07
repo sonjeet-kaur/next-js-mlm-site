@@ -6,11 +6,10 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/investment/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/investment/page.css",
-      "static/chunks/app/investment/page.js"
+      "static/chunks/app/page.js"
     ],
     "/login/page": [
       "static/chunks/webpack.js",
@@ -23,6 +22,12 @@
       "static/chunks/main-app.js",
       "static/css/app/dashboard/page.css",
       "static/chunks/app/dashboard/page.js"
+    ],
+    "/investment/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/investment/page.css",
+      "static/chunks/app/investment/page.js"
     ]
   }
 }
