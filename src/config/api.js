@@ -14,7 +14,7 @@ export const _fetch = async (url, method, data, header) => {
                                         'Content-Type': 'application/json',
                                         "Authorization": "Bearer " + LoginToken,
                                 },
-                                credentials: "include"
+                                // credentials: "include"
                         })
                         .then((response) => response.json())
                         .then((result) => {

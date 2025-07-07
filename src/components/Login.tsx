@@ -6,8 +6,11 @@ import { api_url } from '@/config/config';
 import toasted from '@/config/toast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Login() {
+
+    const router = useRouter();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -26,9 +29,15 @@ export default function Login() {
             localStorage.setItem("auth", 'true');
             localStorage.setItem("userInfo", JSON.stringify(res?.userdata));
             localStorage.setItem("accessToken", res?.token);
+            router.replace('/dashboard');
         }
         else {
-            toasted.error(res?.message);
+            if (typeof res?.message === 'object') {
+                const firstError = Object.values(res.message)[0];
+                toasted.error(firstError);
+            } else {
+                toasted.error(res?.message);
+            }
         }
     }
 

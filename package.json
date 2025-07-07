@@ -20,7 +20,8 @@
     "react-toastify": "^11.0.5",
     "sass": "^1.89.2",
     "web3": "^4.16.0",
-    "web3modal": "^1.9.12"
+    "web3modal": "^1.9.12",
+    "whatwg-url": "^14.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

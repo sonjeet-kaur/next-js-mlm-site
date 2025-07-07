@@ -4,8 +4,8 @@ import Dashboard from '@/components/Dashboard';
 export default function DashboardPage() {
 
     return (
-        // <AuthGuard>
+        <AuthGuard>
             <Dashboard pageTitle="Dashboard" />
-        // </AuthGuard>
+        </AuthGuard>
     )
 }

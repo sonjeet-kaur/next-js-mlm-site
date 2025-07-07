@@ -44,14 +44,17 @@ export default function Register() {
 
     const RegisterSubmit = async (e: any) => {
         e.preventDefault();
+        console.log('walletAddresswalletAddresswalletAddress', walletAddress);
 
         let formData = new FormData();
         formData.append('sponser_id', sponsorID);
-        formData.append('name', username);
-        formData.append('email', email);
-        formData.append('phone', phone);
+        formData.append('wallet_address', walletAddress);
+        // formData.append('name', username);
+        // formData.append('email', email);
+        // formData.append('phone', phone);
 
-        let res: any = await _fetch(`${api_url}register`, "ImagePost", formData, {});
+        // let res: any = await _fetch(`${api_url}register`, "ImagePost", formData, {});
+        let res: any = await _fetch(`${api_url}dappRegister`, "ImagePost", formData, {});
 
         if (res?.status === 'success') {
             toasted.success(res?.message);
