@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserProvider } from '@/app/context/UserContext';
+import '@/Assets/Style/style.scss';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <html lang="en">
-        <body   >
+    <html lang="en">
+      <body>
+        <UserProvider>
           <ToastContainer />
           {children}
-        </body>
-      </html>
-    </>
+        </UserProvider>
+      </body>
+    </html>
   );
 }

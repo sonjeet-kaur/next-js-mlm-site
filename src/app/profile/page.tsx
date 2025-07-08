@@ -1,11 +1,11 @@
 import AuthGuard from '@/components/AuthGuard';
 import Profile from '@/components/Profile';
 
-export default function DashboardPage() {
+export default function ProfilePage() {
 
     return (
         // <AuthGuard>
-            <Profile pageTitle="Dashboard" />
+            <Profile pageTitle="Profile" />
         // </AuthGuard>
     )
 }

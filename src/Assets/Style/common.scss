@@ -24,3 +24,60 @@ h1,h2,h3,h4,h5,h6{
 p{
     margin: 0;
 }
+
+
+
+// forms
+
+
+.form-sec{
+    background: linear-gradient(178deg, #E3E5E6, #F3E9C5);
+    padding: 90px 0;
+    width:100%;
+    position: relative;
+    z-index: 1;
+    .form-heading{
+        padding:50px 50px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #d4d6d7, #e8dcab);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .form-main{
+        .form-input{
+            label{
+                color:#000000a6;
+                font-size: 18px;
+                font-weight: 500;
+                font-family: auto;
+            }
+            .form-control {
+                display: block;
+                width: 100%;
+                padding: 10px 25px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.5;
+                color:#333333e1;
+                appearance: none;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: var(--bs-border-width) solid var(--bs-border-color);
+                border-radius: 50px;
+                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                box-shadow:0px 4px 6px #b8b4b4;
+                &::placeholder{
+                    color:#333333e1;
+                }
+                &:focus{
+                    box-shadow:0px 4px 6px #b8b4b4;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:400px) {
+    .form-sec .form-heading {
+        padding: 50px 15px;
+    }
+}

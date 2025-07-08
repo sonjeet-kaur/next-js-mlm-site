@@ -61,7 +61,7 @@ export default function Header(pageTitle: any) {
               >
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown title="Profile" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#">Edit Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/profile">Edit Profile</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Edit Profile Image
                   </NavDropdown.Item>

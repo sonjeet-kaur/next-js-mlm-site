@@ -1,41 +1,62 @@
 'use client';
 
-import '@/Assets/Style/login.scss';
+import '@/Assets/Style/common.scss';
 import _fetch from '@/config/api';
-import { api_url } from '@/config/config';
-import toasted from '@/config/toast';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useEffect, useState } from 'react';
+
 
 export default function Profile(pageTitle: any) {
 
-    type PackageType = {
-        id: Number,
-        price: number;
-        title: string;
-    };
-
-    const [username, setUsername] = useState('');
-    const [selectPackage, setSelectPackage] = useState({ price: 0, packageID: 0 });
-    const [allPackages, setAllPackages] = useState<PackageType[]>([]);
-    const [balance, setBalance] = useState('');
-
     return (
-        <div className="login-sec">
+        <div className="form-sec">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-6">
-                        <div className="login-heading">
-                            <h2>Edit Profile</h2>
-                            <div className='login-from'>
-                                <div className="form-input">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">User ID</label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter User ID" onChange={(e: any) => setUsername(e.target.value)} value={username} />
-                                </div>
-                              
-                                <div className="form-btn">
-                                    <button className='login-btn' >Update</button>
-                                </div>
+                    <div className="col-md-12">
+                        <div className="form-heading">
+                            <div className='form-main'>
+                               <div className='row'>
+                                    <div className="col-md-6">
+                                            <div className="form-input">
+                                                <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
+                                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Name"  />
+                                            </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Contact Number</label>
+                                            <input type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter Number"  />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Email</label>
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter Email" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Country</label>
+                                            <select className="form-select" aria-label="-- Country --">
+                                                <option selected>-- Country --</option>
+                                                <option value="1">India</option>
+                                                <option value="2">canada</option>
+                                                <option value="3">china</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Address</label>
+                                            <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Address" value="Address" />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Status</label>
+                                            <span className="form-control">Active</span>
+                                        </div>
+                                    </div>
+                               </div>
                             </div>
                         </div>
                     </div>

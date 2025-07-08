@@ -1,13 +1,14 @@
 'use client';
 
-import '@/Assets/Style/style.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import _fetch from '@/config/api';
 import dash_img from '@/Assets/Images/dash.png';
 import Image from "next/image";
 import Link from "next/link";
+import { useUser } from '@/app/context/UserContext';
 
 export default function Dashboard(pageTitle: any) {
+    const { user } = useUser();
 
     return (
         <section className='main'>
@@ -49,10 +50,10 @@ export default function Dashboard(pageTitle: any) {
                                     <span>User Profile</span>
                                 </div>
                                 <div className='user-info'>
-                                    <h3>Name:- <span>Administrator</span></h3>
-                                    <h3>User ID:- <span>Admin</span></h3>
-                                    <h3>Register Date:- <span>07/07/2025</span></h3>
-                                    <h3>Activation Date:- <span>07/07/2025</span></h3>
+                                    <h3>User ID:- <span>{user?.user_id}</span></h3>
+                                    <h3>Name:- <span>{user?.name}</span></h3>
+                                    <h3>Register Date:- <span>{user?.created_at?.split(' ')[0]}</span></h3>
+                                    <h3>Activation Date:- <span>{user?.topup_date?.split(' ')[0]}</span></h3>
                                 </div>
                             </div>
                         </div>
@@ -60,10 +61,8 @@ export default function Dashboard(pageTitle: any) {
 
                     <div className='row'>
                         <div className='col-lg-4'>
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>

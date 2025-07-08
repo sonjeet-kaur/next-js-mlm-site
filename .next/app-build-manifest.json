@@ -28,6 +28,11 @@
       "static/chunks/main-app.js",
       "static/css/app/investment/page.css",
       "static/chunks/app/investment/page.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
