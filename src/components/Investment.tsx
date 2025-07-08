@@ -44,16 +44,18 @@ export default function Investment(pageTitle: any) {
         formData.append('user_id', username);
         formData.append('package_id', String(selectPackage?.packageID));
         formData.append('amount', String(selectPackage?.price));
-        console.log('formDataformData', formData);
 
         let res: any = await _fetch(`${api_url}activation`, "ImagePost", formData, {});
-        console.log('resresresres', res);
-
         if (res?.status == 'success') {
             toasted.success(res?.message);
         }
         else {
-            toasted.error(res?.message);
+            if (typeof res?.message === 'object') {
+                const firstError = Object.values(res.message)[0];
+                toasted.error(firstError);
+            } else {
+                toasted.error(res?.message);
+            }
         }
     }
 

@@ -1,18 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { UserProvider } from '@/app/context/UserContext';
+import '@/Assets/Style/style.scss';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,14 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <html lang="en">
-        <body
-          // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+    <html lang="en">
+      <body>
+        <UserProvider>
+          <ToastContainer />
           {children}
-        </body>
-      </html>
-    </>
+        </UserProvider>
+      </body>
+    </html>
   );
 }

@@ -15,14 +15,11 @@ import { useState } from "react";
 export default function Header(pageTitle: any) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // Track which collapsible menus are open
   const [openSections, setOpenSections] = useState<number | null>(null);
 
   const toggleSection = (index: number) => {
     setOpenSections(openSections === index ? null : index);
   };
-
-  console.log("pageTitlepageTitle", pageTitle);
 
   return (
     <>
@@ -62,9 +59,9 @@ export default function Header(pageTitle: any) {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#">Dashboard</Nav.Link>
+                <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown title="Profile" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#">Edit Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="/profile">Edit Profile</NavDropdown.Item>
                   <NavDropdown.Item href="#">
                     Edit Profile Image
                   </NavDropdown.Item>
@@ -140,15 +137,13 @@ export default function Header(pageTitle: any) {
             >
               Profile
               <i
-                className={`bi ms-2 ${
-                  openSections === 0 ? "bi-chevron-up" : "bi-chevron-down"
-                }`}
+                className={`bi ms-2 ${openSections === 0 ? "bi-chevron-up" : "bi-chevron-down"
+                  }`}
               />
             </button>
             <div
-              className={`sidebar-section-content ${
-                openSections === 0 ? "show" : ""
-              }`}
+              className={`sidebar-section-content ${openSections === 0 ? "show" : ""
+                }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
                 Edit Profile
@@ -170,15 +165,13 @@ export default function Header(pageTitle: any) {
             >
               Deposit
               <i
-                className={`bi ms-2 ${
-                  openSections === 1 ? "bi-chevron-up" : "bi-chevron-down"
-                }`}
+                className={`bi ms-2 ${openSections === 1 ? "bi-chevron-up" : "bi-chevron-down"
+                  }`}
               />
             </button>
             <div
-              className={`sidebar-section-content ${
-                openSections === 1 ? "show" : ""
-              }`}
+              className={`sidebar-section-content ${openSections === 1 ? "show" : ""
+                }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
                 Deposit Money
@@ -197,15 +190,13 @@ export default function Header(pageTitle: any) {
             >
               Activate Account
               <i
-                className={`bi ms-2 ${
-                  openSections === 2 ? "bi-chevron-up" : "bi-chevron-down"
-                }`}
+                className={`bi ms-2 ${openSections === 2 ? "bi-chevron-up" : "bi-chevron-down"
+                  }`}
               />
             </button>
             <div
-              className={`sidebar-section-content ${
-                openSections === 2 ? "show" : ""
-              }`}
+              className={`sidebar-section-content ${openSections === 2 ? "show" : ""
+                }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
                 Activate
@@ -224,15 +215,13 @@ export default function Header(pageTitle: any) {
             >
               Income Report
               <i
-                className={`bi ms-2 ${
-                  openSections === 3 ? "bi-chevron-up" : "bi-chevron-down"
-                }`}
+                className={`bi ms-2 ${openSections === 3 ? "bi-chevron-up" : "bi-chevron-down"
+                  }`}
               />
             </button>
             <div
-              className={`sidebar-section-content ${
-                openSections === 3 ? "show" : ""
-              }`}
+              className={`sidebar-section-content ${openSections === 3 ? "show" : ""
+                }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
                 View Report
@@ -251,15 +240,13 @@ export default function Header(pageTitle: any) {
             >
               Withdraw
               <i
-                className={`bi ms-2 ${
-                  openSections === 4 ? "bi-chevron-up" : "bi-chevron-down"
-                }`}
+                className={`bi ms-2 ${openSections === 4 ? "bi-chevron-up" : "bi-chevron-down"
+                  }`}
               />
             </button>
             <div
-              className={`sidebar-section-content ${
-                openSections === 4 ? "show" : ""
-              }`}
+              className={`sidebar-section-content ${openSections === 4 ? "show" : ""
+                }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
                 Request Withdraw

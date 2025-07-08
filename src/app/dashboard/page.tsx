@@ -6,6 +6,6 @@ export default function DashboardPage() {
     return (
         // <AuthGuard>
             <Dashboard pageTitle="Dashboard" />
-        // </AuthGuard>
+        // {/* </AuthGuard> */}
     )
 }

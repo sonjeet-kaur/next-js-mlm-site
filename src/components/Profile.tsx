@@ -4,6 +4,7 @@ import '@/Assets/Style/common.scss';
 import _fetch from '@/config/api';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 export default function Profile(pageTitle: any) {
 
     return (
@@ -17,19 +18,19 @@ export default function Profile(pageTitle: any) {
                                     <div className="col-md-6">
                                             <div className="form-input">
                                                 <label htmlFor="exampleFormControlInput1" className="form-label">Name</label>
-                                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Name" defaultValue="Administrator" />
+                                                <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter Name" value="Administrator" />
                                             </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="form-input">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Contact Number</label>
-                                            <input type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter Number" defaultValue="000000000" />
+                                            <input type="number" className="form-control" id="exampleFormControlInput1" placeholder="Enter Number" value="000000000" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="form-input space-input">
                                             <label htmlFor="exampleFormControlInput1" className="form-label">Email</label>
-                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter Email" defaultValue="abc12@gmail.com" />
+                                            <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="Enter Email" value="abc12@gmail.com" />
                                         </div>
                                     </div>
                                     <div className="col-md-6">
