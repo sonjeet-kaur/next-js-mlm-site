@@ -212,6 +212,12 @@
   .me-auto {
     margin-inline-end: auto;
   }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
   }
@@ -224,8 +230,14 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
+  .h-45 {
+    height: calc(var(--spacing) * 45);
+  }
   .min-h-screen {
     min-height: 100vh;
+  }
+  .w-45 {
+    width: calc(var(--spacing) * 45);
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
@@ -303,6 +315,9 @@
   }
   .bg-foreground {
     background-color: var(--foreground);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .p-8 {
     padding: calc(var(--spacing) * 8);

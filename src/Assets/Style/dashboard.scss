@@ -110,4 +110,64 @@
             }
         }
     }
+
+    // card css
+    .project-profit-card {
+        position: relative;
+        box-shadow: var(--box-shadow);
+        border: none;
+        margin-bottom: 1.25rem;
+        transition: all 0.3s ease;
+        border-radius: 7px;
+        margin-top: 30px;
+        text-align: center;
+        padding: 25px;
+        .profit-arrow {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            span {
+                i{
+                    background: #27656b;
+                    padding: 4px 8px;
+                    border-radius: 50px;
+                    color: white;
+                    font-size: 40px;
+                    font-weight: 900;
+                    outline: 10px solid #f6f7fa;
+                }
+            }
+        }
+        .icon-div{
+            margin-bottom: 20px;
+            span{
+                i{
+                    background: linear-gradient(133deg, #27656b, #23afbd);
+                    padding: 9px 11px;
+                    border-radius: 9px;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: 900;
+                }
+            }
+        }
+        .card-content{
+            h4{
+                font-size: 20px;
+                font-weight: 500;
+                color:var(--black-content);
+            }
+            p{
+                font-size: 30px;
+                font-weight: 800;
+                color:var(--green-clr);
+                margin: 0;
+                i{
+                    font-size: 30px;
+                    font-weight: 800;
+                    color:var(--green-clr);
+                }
+            }
+        }
+    }
 }
