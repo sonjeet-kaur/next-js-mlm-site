@@ -23,6 +23,12 @@
       "static/css/app/dashboard/page.css",
       "static/chunks/app/dashboard/page.js"
     ],
+    "/deposit/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/deposit/page.css",
+      "static/chunks/app/deposit/page.js"
+    ],
     "/investment/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -35,17 +41,10 @@
       "static/css/app/profile/page.css",
       "static/chunks/app/profile/page.js"
     ],
-    "/report/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/report/page.css",
-      "static/chunks/app/report/page.js"
-    ],
-    "/register/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/register/page.css",
-      "static/chunks/app/register/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }

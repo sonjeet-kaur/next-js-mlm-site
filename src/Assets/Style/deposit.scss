@@ -1,0 +1,188 @@
+.main-page{
+    padding-top:50px;
+    padding-bottom:50px;
+     .card-deposit{
+        padding:50px 50px;
+        border-radius: 12px;
+        position: relative;
+        z-index: 1;
+        &::before{
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background:linear-gradient(135deg, #26646b, #122a32);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: -1;
+            filter: blur(1px);
+            border-radius:10px;
+        }
+        .deposit-qr-main{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .deposit-qr{
+                img{
+                   background:var(--txt-white);
+                   width:250px;
+                }
+            }
+            .deposit-qr-info{
+                text-align: center;
+                h5{
+                    color: var(--txt-white);
+                    font-size: 22px;
+                    font-weight: 400;
+                    font-family: system-ui;
+                    margin-bottom: 17px;
+                }
+                span{
+                    background:var(--green-clr);
+                    color:var(--txt-white);
+                    padding: 10px 40px;
+                    border-radius: 7px;
+                    box-shadow: 0px 0px 4px var(--txt-white);
+                    font-size: 20px;
+                    font-weight: 400;
+                    font-family: system-ui;
+                }
+            }
+        }
+        .deposit-copy-input{
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 22px;
+            h2{
+                color: var(--txt-white);
+                font-size: 25px;
+                font-weight: 400;
+                font-family: system-ui;
+                margin-bottom: 5px;
+                position: relative;
+                padding:11px 0;
+                &::before{
+                    position: absolute;
+                    content: "";
+                    width:78%;
+                    height: 100%;
+                    top: 50%;
+                    left: 22%;
+                    z-index: -1;
+                    filter: blur(1px);
+                    border-top:2px dashed var(--txt-white);
+                }
+            }
+            .copy-address{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .copy-link{
+                    width: 100%;
+                    p{
+                        border: 2px solid var(--green-clr);
+                        padding: 15px 10px;
+                        border-radius: 6px;
+                        color: var(--txt-white);
+                    }
+                }
+            }
+        }
+        .info-p{
+            p{
+                font-size: 20px;
+                font-weight: 400;
+                font-family: system-ui;
+                color:red;
+            }
+            h6{
+                font-size: 20px;
+                font-weight: 400;
+                font-family: system-ui;
+                color:var(--txt-white);
+            }
+        }
+        .time-info{
+            margin-bottom: 25px;
+        }
+        .deposit-note{   
+            background: #E9F7FE;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            padding: 15px 17px;
+            border-radius: 20px 20px 10px 10px;
+            text-align: center;
+            h6{
+                font-size: 17px;
+                font-weight: 400;
+                font-family: system-ui;
+                margin: 0;
+            }
+        }
+     }
+}
+
+
+@media (max-width:992px) {
+    .main-page{
+         .card-deposit{
+            padding:50px 15px;
+            .deposit-qr-main{
+                flex-direction: column;
+                gap:20px;
+                .deposit-qr-info{
+                    h5{
+                        color: var(--txt-white);
+                        font-size: 22px;
+                        font-weight: 400;
+                        font-family: system-ui;
+                        margin-bottom: 17px;
+                    }
+                    span{
+                        background:var(--green-clr);
+                        color:var(--txt-white);
+                        padding: 10px 40px;
+                        border-radius: 7px;
+                        box-shadow: 0px 0px 4px var(--txt-white);
+                        font-size: 20px;
+                        font-weight: 400;
+                        font-family: system-ui;
+                    }
+                }
+            }
+            .deposit-copy-input{
+                h2{
+                    &::before{
+                        width:50%;
+                        left:50%;
+                    }
+                }
+                .copy-address{
+                    flex-direction: column;
+                    margin-top: 30px;
+                    .copy-link{
+                        margin-bottom: 30px;
+                        width: 100%;
+                    }
+                }
+            }
+            .info-p{
+                padding-bottom:50px;
+            }
+            .time-info{
+                margin-bottom: 25px;
+                padding-bottom:0px;
+            }
+         }
+    }
+}
+
+
+@media (max-width:400px) {
+    .main-page .card-deposit .deposit-copy-input .copy-address .copy-link p {
+        overflow: scroll;
+    }
+}
