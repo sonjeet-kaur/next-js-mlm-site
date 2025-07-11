@@ -1,1 +1,3 @@
 export const api_url = 'http://192.168.18.245/mlm_software_hmvc/user/';
+
+export const currency = '$';

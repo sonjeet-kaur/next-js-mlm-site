@@ -29,12 +29,7 @@ export default function Header(pageTitle: any) {
             <div className="header-div">
               <div className="logo-div">logo</div>
               <div className="header-right-data">
-                <button
-                  className="header-toggle d-lg-none me-2"
-                  onClick={() => setSidebarOpen(true)}
-                >
-                  <i className="bi bi-list fs-2"></i>
-                </button>
+
                 <div className="userpic-div">
                   <Image src={userpic} alt="" />
                 </div>
@@ -43,6 +38,12 @@ export default function Header(pageTitle: any) {
                     <i className="bi bi-box-arrow-left"></i>
                   </Link>
                 </div>
+                <button
+                  className="header-toggle d-lg-none me-2"
+                  onClick={() => setSidebarOpen(true)}
+                >
+                  <i className="bi bi-list fs-2"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -62,45 +63,26 @@ export default function Header(pageTitle: any) {
                 <Nav.Link href="/dashboard">Dashboard</Nav.Link>
                 <NavDropdown title="Profile" id="navbarScrollingDropdown">
                   <NavDropdown.Item href="/profile">Edit Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Edit Profile Image
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Profile Update Image
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">Edit Profile Image</NavDropdown.Item>
+                  <NavDropdown.Item href="#"> Profile Update Image</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Deposit" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#">Edit Profile</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Edit Profile Image
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Profile Update Image
-                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#">Deposit USDT BEP20</NavDropdown.Item>
+                  <NavDropdown.Item href="#">  Wallet History </NavDropdown.Item>
                 </NavDropdown>
-                <NavDropdown
-                  title="Activate Account"
-                  id="navbarScrollingDropdown"
-                >
+                <NavDropdown title="Activate Account" id="navbarScrollingDropdown"  >
                   <NavDropdown.Item href="/investment">Activate Account</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Edit Profile Image
-                  </NavDropdown.Item>
                   <NavDropdown.Item href="#">Wallet Ledger</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Income Report" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#">Activate Account</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Edit Profile Image
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">Wallet Ledger</NavDropdown.Item>
+                  <NavDropdown.Item href="/report">Direct Income</NavDropdown.Item>
+                  <NavDropdown.Item href="/report">Roi Income</NavDropdown.Item>
+                  <NavDropdown.Item href="/report">Level Income</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Income Ledger</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Withdraw" id="navbarScrollingDropdown">
-                  <NavDropdown.Item href="#">Activate Account</NavDropdown.Item>
-                  <NavDropdown.Item href="#">
-                    Edit Profile Image
-                  </NavDropdown.Item>
-                  <NavDropdown.Item href="#">Wallet Ledger</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Withdrawal</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Withdrawal History</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -125,7 +107,7 @@ export default function Header(pageTitle: any) {
           <i className="bi bi-x fs-2"></i>
         </button>
         <Nav className="flex-column side-nav">
-          <Nav.Link href="#" className="sidebar-a-main">
+          <Nav.Link href="/dashboard" className="sidebar-a-main">
             Dashboard
           </Nav.Link>
 
@@ -145,7 +127,7 @@ export default function Header(pageTitle: any) {
               className={`sidebar-section-content ${openSections === 0 ? "show" : ""
                 }`}
             >
-              <Nav.Link href="#" className="sidebar-a ps-4">
+              <Nav.Link href="/profile" className="sidebar-a ps-4">
                 Edit Profile
               </Nav.Link>
               <Nav.Link href="#" className="sidebar-a ps-4">
@@ -174,10 +156,10 @@ export default function Header(pageTitle: any) {
                 }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
-                Deposit Money
+                Deposit USDT BEP20
               </Nav.Link>
               <Nav.Link href="#" className="sidebar-a ps-4">
-                Deposit History
+                Wallet History
               </Nav.Link>
             </div>
           </div>
@@ -198,8 +180,8 @@ export default function Header(pageTitle: any) {
               className={`sidebar-section-content ${openSections === 2 ? "show" : ""
                 }`}
             >
-              <Nav.Link href="#" className="sidebar-a ps-4">
-                Activate
+              <Nav.Link href="/investment" className="sidebar-a ps-4">
+                Activate Account
               </Nav.Link>
               <Nav.Link href="#" className="sidebar-a ps-4">
                 Wallet Ledger
@@ -223,11 +205,17 @@ export default function Header(pageTitle: any) {
               className={`sidebar-section-content ${openSections === 3 ? "show" : ""
                 }`}
             >
-              <Nav.Link href="#" className="sidebar-a ps-4">
-                View Report
+              <Nav.Link href="/report" className="sidebar-a ps-4">
+                Direct Income
+              </Nav.Link>
+              <Nav.Link href="/report" className="sidebar-a ps-4">
+                ROI Income
+              </Nav.Link>
+              <Nav.Link href="/report" className="sidebar-a ps-4">
+                Level Income
               </Nav.Link>
               <Nav.Link href="#" className="sidebar-a ps-4">
-                Download Report
+                Income Ledger
               </Nav.Link>
             </div>
           </div>
@@ -249,10 +237,10 @@ export default function Header(pageTitle: any) {
                 }`}
             >
               <Nav.Link href="#" className="sidebar-a ps-4">
-                Request Withdraw
+                Withdrawal
               </Nav.Link>
               <Nav.Link href="#" className="sidebar-a ps-4">
-                Withdraw History
+                Withdrawal History
               </Nav.Link>
             </div>
           </div>

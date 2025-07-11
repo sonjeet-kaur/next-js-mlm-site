@@ -11,7 +11,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
     const { setUser, checked, setChecked } = useUser();
 
     useEffect(() => {
-        // getUserLoginInfo();
+        getUserLoginInfo();
     }, []);
 
     const getUserLoginInfo = async () => {

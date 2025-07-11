@@ -2,7 +2,7 @@
 
 import '@/Assets/Style/login.scss';
 import _fetch from '@/config/api';
-import { api_url } from '@/config/config';
+import { api_url, currency } from '@/config/config';
 import toasted from '@/config/toast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect, useState } from 'react';
@@ -60,29 +60,50 @@ export default function Investment(pageTitle: any) {
     }
 
     return (
-        <div className="login-sec">
+
+        <div className="form-sec">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-6">
-                        <div className="login-heading">
-                            <h2>Activation</h2>
-                            <p>Wallet Balance: {balance}</p>
-                            <div className='login-from'>
-                                <div className="form-input">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">User ID</label>
-                                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter User ID" onChange={(e: any) => setUsername(e.target.value)} value={username} />
-                                </div>
-                                <div className="form-input form-input-password">
-                                    <label htmlFor="exampleFormControlInput1" className="form-label">Packages</label>
-                                    <select onChange={(e) => setSelectPackage(JSON.parse(e.target.value))}>
-                                        <option value=""> Select Package </option>
-                                        {allPackages?.map((item, index) => (
-                                            <option key={index} value={JSON.stringify({ price: item?.price, packageID: item?.id })}> {item?.price} </option>
-                                        ))}
-                                    </select>
-                                </div>
-                                <div className="form-btn">
-                                    <button className='login-btn' onClick={BuyPackage}>Buy Now</button>
+                    <div className="col-md-12">
+                        <div className="form-heading">
+                            <p className="form-label">Wallet Balance: {currency}{balance ? balance : 0}</p>
+                            <div className='form-main'>
+                                <div className='row'>
+                                    <div className="col-md-6">
+                                        <div className="form-input space-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">User ID</label>
+                                            <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Enter User ID" onChange={(e: any) => setUsername(e.target.value)} value={username} />
+                                        </div>
+                                    </div>
+                                    <div className="col-md-6">
+                                        <div className="form-input space-input">
+                                            <label htmlFor="exampleFormControlInput1" className="form-label">Packages</label>
+                                            <select className="form-select" aria-label="" onChange={(e) => setSelectPackage(JSON.parse(e.target.value))}>
+                                                <option selected>Select Package</option>
+                                                {allPackages?.map((item, index) => (
+                                                    <option key={index} value={JSON.stringify({ price: item?.price, packageID: item?.id })}> {currency}{item?.price} </option>
+                                                ))}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className='col-md-12'>
+                                        <div className='btn-main'>
+                                            <button className="animated-button">
+                                                <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                                    ></path>
+                                                </svg>
+                                                <button className="text" onClick={BuyPackage}>Buy Now</button>
+                                                <span className="circle"></span>
+                                                <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                                    ></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

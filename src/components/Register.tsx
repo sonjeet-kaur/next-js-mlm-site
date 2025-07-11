@@ -10,6 +10,8 @@ import { ethers } from 'ethers';
 import { Web3 } from 'web3';
 import Web3modal from 'web3modal';
 import WalletConnectProvider from "@walletconnect/web3-provider";
+import login_img from '@/Assets/Images/login_img.png';
+import Image from "next/image";
 
 export default function Register() {
 
@@ -72,7 +74,12 @@ export default function Register() {
     return (
         <div className="login-sec">
             <div className="container">
-                <div className="row justify-content-center">
+                <div className="row justify-content-center login-row">
+                    <div className='col-md-6 login-img-div'>
+                       <div className="login-img register-img">
+                           <Image src={login_img} alt="login-img" />
+                       </div>
+                    </div>
                     <div className="col-md-6">
                         <div className="login-heading">
                             <h2>Register</h2>
@@ -93,8 +100,22 @@ export default function Register() {
                                     <label htmlFor="exampleFormControlInput1" className="form-label">Phone Number</label>
                                     <input type="number" className="form-control" id="exampleFormControlInput1" placeholder="Ente Your Number" onChange={(e: any) => setPhone(e.target.value)} value={phone} />
                                 </div>
-                                <div className="form-btn">
-                                    <button className='login-btn' onClick={RegisterSubmit}>Register Now</button>
+                                <div className="form-btn btn-main">
+                                    {/* <button className='login-btn' onClick={RegisterSubmit}>Register Now</button> */}
+                                    <button className="animated-button " onClick={RegisterSubmit}>
+                                        <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                            ></path>
+                                        </svg>
+                                        <span className="text">Register Now</span>
+                                        <span className="circle"></span>
+                                        <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                            ></path>
+                                        </svg>
+                                    </button>
                                 </div>
 
                                 <button onClick={connectWallet}>

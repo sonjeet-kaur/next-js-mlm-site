@@ -2,7 +2,6 @@
 export const _fetch = async (url, method, data, header) => {
 
         const LoginToken = localStorage.getItem("accessToken");
-        console.log('LoginTokenLoginToken', LoginToken);
 
         if (method === 'get' || method === 'GET') {
 

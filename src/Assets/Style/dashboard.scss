@@ -32,56 +32,9 @@
             }
         }
     }
-    .refer-link-main{
-        background:#fff;
-        box-shadow:var(--box-shadow);
-        padding: 20px;
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius:8px;
-        .refer-link{
-            .copy-link{
-                text-decoration:none;
-                background:var(--green-clr);
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                padding: 10px 25px;
-                margin-right: 10px;
-                border-radius: 10px;
-                color: var(--txt-white);
-                i{
-                    font-size: 25px;
-                }
-            }
-        }
-        .share-btn{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .social-btn{
-                .custom-link{
-                    text-decoration:none;
-                    background:var(--green-clr);
-                    display: flex;
-                    align-items: center;
-                    gap: 15px;
-                    padding: 10px 25px;
-                    margin-right: 10px;
-                    border-radius: 10px;
-                    color: var(--txt-white);
-                    i{
-                        font-size: 25px;
-                    }
-                }
-            }
-        }
-    }
     .profile-card{
         background:linear-gradient(35deg, #26646ba3, #26646b61, #26646b61, #26646ba3);
-        padding:50px;
+        padding:20px 60px;
         border-radius:10px;
         box-shadow:0 .1rem 0.5rem 0 #28232d1a;
         .profile-heading{
@@ -109,5 +62,351 @@
                 }
             }
         }
+    }
+    .refer-link-main{
+        background:#fff;
+        box-shadow:var(--box-shadow);
+        padding: 20px;
+        margin-top: 30px;
+        border-radius:8px;
+        .refer-link{
+            h4{
+                font-family: system-ui;
+                font-size: 20px;
+                font-weight: 400;
+                text-align: center;
+            }
+            .refer-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .copy-link{
+                    text-decoration:none;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    padding: 8px 30px;
+                    color: var(--green-clr);
+                    font-family: system-ui;
+                    font-size: 16px;
+                    font-weight: 300;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);
+                    border-top: 1px solid transparent !important;
+                    border-bottom: 1px solid transparent !important;
+                    border: 1px solid var(--green-clr);
+                    border-radius: 0;
+                    background-color:transparent;
+                    &::before{   
+                        position: absolute;
+                        content: "";
+                        width: 0%;
+                        height: 100%; 
+                        left: 0;
+                        border: 1px solid var(--green-clr);
+                        border-left: 0;
+                        border-right: 0;
+                        z-index: -1;
+                    }
+                    &::after{
+                        position: absolute;
+                        content: "";
+                        width: 0%;
+                        height: 100%;
+                        right: 0;
+                        top: 0;
+                        z-index: -1;
+                    }
+                    &:hover::before{
+                        width: 80%;
+                        left: 20px;
+                        transition-delay: 0s;
+                    }
+                    &:hover::after{
+                        width: 100%;
+                        background: var(--green-clr);
+                        transition-delay: .35s;
+                        border-radius: 5px;
+                    }
+                    &:hover{
+                        color:var(--txt-white);
+                        border: 1px solid transparent;
+                        background-color: transparent;
+                        transition-delay: .030s;
+                    }
+                    &:hover i{
+                        color:var(--txt-white);
+                    }
+                    i{
+                        font-size: 25px;
+                        color:var(--green-clr);
+                    }
+                }
+            }
+        }
+    }
+    .share-btn{
+        background:#fff;
+        box-shadow:var(--box-shadow);
+        padding:0px;
+        margin-top: 30px;
+        border-radius:8px;
+        height: 222px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        .custom-link{
+            position: relative;
+            z-index: 1;
+            text-decoration:none;
+            color: var(--txt-black);
+            text-align: center;
+            padding-right: 50px;
+                i{
+                    font-size: 200px;
+                    position: absolute;
+                    content: "";
+                    opacity: 0.3;
+                    color: #26646b;
+                    top: -90px;
+                    left: -15px;
+                }
+                .span-title{
+                    position: relative;
+                    top:175px;
+                    justify-content: center;
+                    display: flex;
+                    font-family: system-ui;
+                    font-size: 17px;
+                    font-weight: 400;
+                }
+        }
+    }
+    .user-status{
+        background:url(../Images/user-card-bg.png);
+        background-position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 50px;
+        margin-top: 30px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 65px;
+            height: 150px;
+            right: 0;
+            top: -45px;
+            background: linear-gradient(45deg, #27656b, #ffffff);
+            z-index: -1;
+            transform: rotate(30deg);
+            clip-path: polygon(83% 0, 100% 0%, 0 100%, 0% 100%);
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 65px;
+            height: 90px;
+            right: 25px;
+            top: 20px;
+            background: linear-gradient(45deg, #27656b, #fff);
+            z-index: -1;
+            transform: rotate(20deg);
+            clip-path: polygon(83% 0, 100% 0%, 0 100%, 0% 100%);
+        }
+        .user-img{
+            width:100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+            img{
+               width:50px;
+               background: #fff;
+               border-radius: 10px;
+               padding: 4px;
+            }
+        }
+        h3{
+            font-size: 20px;
+            font-weight: 300;
+            font-family: system-ui;
+        }
+        span{
+            font-size: 20px;
+            font-weight:700;
+            color:green;
+            font-family: system-ui;
+        }
+    }
+
+    // card css
+    .project-profit-card {
+        position: relative;
+        box-shadow: var(--box-shadow);
+        border: none;
+        margin-bottom: 1.25rem;
+        transition: all 0.3s ease;
+        border-radius: 7px;
+        margin-top: 30px;
+        text-align: center;
+        padding: 25px;
+        z-index: 1;
+        // overflow: hidden;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 70px;
+            top: 0;
+            left: 10%;
+            background:linear-gradient(45deg, #27656b, transparent);
+            border-radius: 0px 0px 50px 50px;
+            filter: blur(1px);
+            z-index: -1;
+        }
+        &::after {
+            position: absolute;
+            content: "";
+            width: 10px;
+            height: 90px;
+            top: 0;
+            left: 5%;
+            background:linear-gradient(45deg, #27656b, transparent);
+            border-radius: 0px 0px 50px 50px;
+            filter: blur(1px);
+            z-index: -1;
+        }
+        .shape-div{
+            position: relative;
+            z-index: 1;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 70px;         
+                top: 122px;
+                right: 5.1%;
+                background:linear-gradient(45deg, #27656b, transparent);
+                border-radius: 50px 50px 0px 0px;
+                filter: blur(1px);
+                z-index: -1;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 90px;          
+                top: 101px;
+                right: 0%;
+                background:linear-gradient(45deg, #27656b, transparent);
+                border-radius: 50px 50px 0px 0px;
+                filter: blur(1px);
+                z-index: -1;
+            }
+        }
+        .shape-div2{
+            position: relative;
+            z-index: 1;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 50px;         
+                top: -25px;
+                left: 10%;
+                background:linear-gradient(45deg, #27656b, transparent);
+                border-radius: 0px 0px 50px 50px;
+                filter: blur(1px);
+                z-index: -1;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 50px;          
+                top: 143px;
+                right: 11%;
+                background:linear-gradient(45deg, #27656b, transparent);
+                border-radius: 50px 50px 0px 0px;
+                filter: blur(1px);
+                z-index: -1;
+            }
+        }
+        .profit-arrow {
+            position: absolute;
+            right: 0;
+            top: -5px;
+            span {
+                i{
+                    background: #27656b;
+                    padding: 4px 8px;
+                    border-radius: 50px;
+                    color: white;
+                    font-size: 40px;
+                    font-weight: 900;
+                    outline: 10px solid #f6f7fa;
+                }
+            }
+        }
+        .icon-div{
+            margin-bottom: 20px;
+            span{
+                i{
+                    background: linear-gradient(133deg, #27656b, #23afbd);
+                    padding: 9px 11px;
+                    border-radius: 9px;
+                    color: #fff;
+                    font-size: 25px;
+                    font-weight: 900;
+                }
+            }
+        }
+        .card-content{
+            h4{
+                font-size: 20px;
+                font-weight: 500;
+                color:var(--black-content);
+            }
+            p{
+                font-size: 30px;
+                font-weight: 800;
+                color:var(--green-clr);
+                margin: 0;
+                i{
+                    font-size: 30px;
+                    font-weight: 800;
+                    color:var(--green-clr);
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:525px) {
+    .main-page .dashboard-heading .dash-content h2 {
+        font-size: 20px;
+    }
+    .main-page .dashboard-heading .dash-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .responsive-profile{
+        margin-top: 30px;
+    }
+}
+@media (max-width:768px) {
+    .responsive-profile{
+        margin-top: 30px;
+    }
+}
+@media (max-width:992px) {
+    .main-page .profile-card {
+        padding: 20px 10px;
     }
 }

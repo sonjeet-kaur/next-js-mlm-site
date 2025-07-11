@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function DashboardPage() {
 
     return (
-        // <AuthGuard>
+        <AuthGuard>
             <Investment pageTitle="Activation" />
-        // </AuthGuard>
+        </AuthGuard>
     )
 }

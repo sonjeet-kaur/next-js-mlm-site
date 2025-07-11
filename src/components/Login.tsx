@@ -7,6 +7,8 @@ import toasted from '@/config/toast';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import login_img from '@/Assets/Images/login_img.png';
+import Image from "next/image";
 
 export default function Login() {
 
@@ -44,8 +46,13 @@ export default function Login() {
     return (
         <div className="login-sec">
             <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-6">
+                <div className="row justify-content-center login-row">
+                    <div className='col-md-6 login-img-div'>
+                       <div className="login-img">
+                           <Image src={login_img} alt="login-img" />
+                       </div>
+                    </div>
+                    <div className=" col-lg-6 col-md-12 ">
                         <div className="login-heading">
                             <h2>Login</h2>
                             <div className='login-from'>
@@ -66,8 +73,22 @@ export default function Login() {
                                     </div>
                                     <a href="#">Forget Password</a>
                                 </div>
-                                <div className="form-btn">
-                                    <button className='login-btn' onClick={LoginSubmit}>Login Now</button>
+                                <div className="form-btn btn-main">
+                                    {/* <button className='login-btn' onClick={LoginSubmit}>Login Now</button> */}
+                                    <button className="animated-button " onClick={LoginSubmit}>
+                                        <svg viewBox="0 0 24 24" className="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                            ></path>
+                                        </svg>
+                                        <span className="text">Login Now</span>
+                                        <span className="circle"></span>
+                                        <svg viewBox="0 0 24 24" className="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                            d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                                            ></path>
+                                        </svg>
+                                    </button>
                                 </div>
                             </div>
                         </div>
